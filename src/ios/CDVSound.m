@@ -372,7 +372,7 @@ BOOL keepAvAudioSessionAlwaysActive = NO;
 
                 NSString* sessionCategory = bPlayAudioWhenScreenIsLocked ? AVAudioSessionCategoryPlayback : AVAudioSessionCategorySoloAmbient;
                 // [self.avSession setCategory:sessionCategory error:&err];
-                [self.avSession setCategory:AVAudioSessionCategoryPlayAndRecord
+                [self.avSession setCategory:AVAudioSessionCategoryPlayback
                                                      withOptions:AVAudioSessionCategoryOptionDuckOthers | AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionAllowBluetooth | AVAudioSessionCategoryOptionAllowAirPlay | AVAudioSessionCategoryOptionAllowBluetoothA2DP
                                                            error:&err];
              
