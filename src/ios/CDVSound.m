@@ -27,14 +27,14 @@
 
 @implementation CDVSound
 
-BOOL keepAvAudioSessionAlwaysActive = NO;
+BOOL keepAvAudioSessionAlwaysActive = YES;
 
 @synthesize soundCache, avSession, currMediaId, statusCallbackId;
 
 -(void) pluginInitialize
 {
     NSDictionary* settings = self.commandDelegate.settings;
-    keepAvAudioSessionAlwaysActive = [[settings objectForKey:[@"KeepAVAudioSessionAlwaysActive" lowercaseString]] boolValue];
+    keepAvAudioSessionAlwaysActive = YES; // [[settings objectForKey:[@"KeepAVAudioSessionAlwaysActive" lowercaseString]] boolValue];
     if (keepAvAudioSessionAlwaysActive) {
         if ([self hasAudioSession]) {
             NSError* error = nil;
